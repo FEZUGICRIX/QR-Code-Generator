@@ -25,12 +25,14 @@ const downloadQRCode =  () => {
 
     qrSize.onchange = () => {
         parameters.size = qrSize.value;
-        setStyles()
     };
 
     download.onclick = () => {
         const filename = fileNameElement.value.trim().replace(/ /g, "_");
-        const url = qrCodeImg.src;
+        const url = qrCodeImg.src.replace(
+            "size=200x200", `size=${parameters.size}`
+        );
+
         fetch(url)
             .then(response => response.blob())
             .then(blob => {

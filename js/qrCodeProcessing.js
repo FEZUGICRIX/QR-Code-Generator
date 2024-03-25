@@ -18,7 +18,7 @@ let qrData = '';
 
 const fetchData = async (color, bgColor) => {
     urlQRCodeStyle = `
-        &size=${parameters.size}&color=${color}
+        &size=200x200&color=${color}
         &bgcolor=${bgColor}&margin=${margin}
         &format=${parameters.extensionType}
     `.replace(/\s+/g, '');
@@ -60,7 +60,7 @@ const getQRCode = (data) => {
     }
     if (bgColorChangeHandler) {
         qrBgColor.removeEventListener('input', bgColorChangeHandler);
-    }
+    };
 
     // Adding new event handlers and saving links to them
     colorChangeHandler = () => {

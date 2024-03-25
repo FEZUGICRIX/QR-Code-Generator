@@ -42,7 +42,6 @@ const getQRCode = (data) => {
     fetchData(color, bgColor);
     
     const inputEventHandler = (type) => {
-        console.log('aa');
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(async () => {
             if (type === 'color') {

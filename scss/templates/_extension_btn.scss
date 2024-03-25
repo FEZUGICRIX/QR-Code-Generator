@@ -21,17 +21,12 @@
   background: $main-color;
   box-shadow: -5px -5px 0 0 $dark;
   color: $white;
-
-  &:hover {
-    box-shadow: 5px 5px 0 0 $dark;
-    transform: scale(0.9);
-  }
 }
 
 @media (max-width: $extra-small-screen) {
   .extension {
-    @include button(8px 21px, 16px,  $border: 1px solid $dark, $background: $white, $color: $dark);
-
+    font-size: 16px;
+    padding: 7px 21px;
     box-shadow: 2px 2px 0 0 $dark;
 
     &:hover {
@@ -39,11 +34,9 @@
     }
   }
   .extension-active {
-    @include button(8px 21px, 16px, 1px solid $dark);
+    font-size: 16px;
+    padding: 7px 21px;
+    // @include button(8px 21px, 16px, 1px solid $dark);
     box-shadow: -2px -2px 0 0 $dark;
-
-    &:hover {
-      box-shadow: 2px 2px 0 0 $dark;
-    }
   }
 }

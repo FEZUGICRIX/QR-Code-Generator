@@ -3,7 +3,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
 @import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/themes/light.css';
-
 * {
   margin: 0;
   padding: 0;
@@ -160,22 +159,11 @@ button {
           box-shadow: -5px -5px 0 0 #0f0f0f;
   color: #fff;
 }
-.extension-active:hover {
-  -webkit-box-shadow: 5px 5px 0 0 #0f0f0f;
-          box-shadow: 5px 5px 0 0 #0f0f0f;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-}
 
 @media (max-width: 450px) {
   .extension {
-    padding: 8px 21px;
-    background: #fff;
-    color: #0f0f0f;
     font-size: 16px;
-    border-radius: 10px;
-    border: 1px solid #0f0f0f;
-    cursor: pointer;
+    padding: 7px 21px;
     -webkit-box-shadow: 2px 2px 0 0 #0f0f0f;
             box-shadow: 2px 2px 0 0 #0f0f0f;
   }
@@ -184,19 +172,10 @@ button {
             box-shadow: -2px -2px 0 0 #0f0f0f;
   }
   .extension-active {
-    padding: 8px 21px;
-    background: #803BB6;
-    color: #fff;
     font-size: 16px;
-    border-radius: 10px;
-    border: 1px solid #0f0f0f;
-    cursor: pointer;
+    padding: 7px 21px;
     -webkit-box-shadow: -2px -2px 0 0 #0f0f0f;
             box-shadow: -2px -2px 0 0 #0f0f0f;
-  }
-  .extension-active:hover {
-    -webkit-box-shadow: 2px 2px 0 0 #0f0f0f;
-            box-shadow: 2px 2px 0 0 #0f0f0f;
   }
 }
 .generate {
@@ -490,7 +469,7 @@ body {
     width: 100%;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 585px) {
   .qr .qr__types {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
@@ -534,7 +513,6 @@ body {
     width: 100%;
   }
 }
-
 @media (max-width: 450px) {
   .qr .container {
     margin: 30px 5px;

@@ -1,0 +1,28 @@
+@import "./variables.scss";
+
+@mixin button($padding, $font-size, $border: none,
+$background: $main-color, $color: $white) {
+  padding: $padding;
+  background: $background;
+  color: $color;
+  font-size: $font-size;
+  border-radius: $medium-border-radius;
+  border: $border;
+  cursor: pointer;
+}
+
+
+@mixin input() {
+  padding: 10px 8px;
+  border-radius: $small-border-radius;
+  border: 1px solid;
+  outline: none;
+}
+
+@mixin select() {
+  padding: 9px 8px;
+  font-size: 16px;
+  border: 1px solid;
+  border-radius: $small-border-radius;
+  outline: none;
+}

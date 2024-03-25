@@ -1,0 +1,102 @@
+@import "../globals/variables";
+
+$b-font-size: 0.67em;
+$b-font-weight: 400;
+$b-opacity: 0.75;
+$b-line-height: 1.15em;
+$b-letter-spacing: 0.025em;
+
+.button {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  font-size: 30px;
+  width: 100%;
+
+  .bottom {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 100%;
+    height: 100%;
+    background-color: $main-color;
+    display: block;
+    transition: all .15s ease-out;
+  }
+
+  .top {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 24px 34px 22px 34px;
+    border: 2px solid #4bb986;
+
+    .label {
+      font-family: sans-serif;
+      font-weight: 600;
+      color: $white;
+      font-size: $b-font-size;
+      line-height: $b-line-height;
+      letter-spacing: $b-letter-spacing;
+      text-align: center;
+      text-transform: uppercase;
+      transition: all .15s ease-out;
+    }
+  }
+
+  &:hover .bottom {
+    left: 0;
+    top: 0;
+    background-color: #f3f3f3;
+  }
+
+  &:hover .top .label {
+    color: #803BB6; // New color
+  }
+
+  &-border {
+    position: absolute;
+    background-color: #803BB6; // New color
+    transition: all .25s ease-out;
+
+    &-left {
+      left: -2px;
+      bottom: -2px;
+      width: 2px;
+      height: 0;
+    }
+
+    &-top {
+      left: -2px;
+      top: -2px;
+      width: 0;
+      height: 2px;
+    }
+
+    &-right {
+      right: -2px;
+      top: -2px;
+      width: 2px;
+      height: 0;
+    }
+
+    &-bottom {
+      right: -2px;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+    }
+  }
+
+  &:hover .top .button-border-left,
+  &:hover .top .button-border-right {
+    height: calc(100% + 2px);
+  }
+
+  &:hover .top .button-border-top,
+  &:hover .top .button-border-bottom {
+    width: calc(100% + 2px);
+  }
+}

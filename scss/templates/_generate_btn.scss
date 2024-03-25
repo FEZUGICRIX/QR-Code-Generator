@@ -1,0 +1,31 @@
+@import "../globals/mixins";
+@import "../globals/variables";
+
+.generate {
+  text-transform: uppercase;
+  font-weight: 450;
+  border-radius: 5px;
+  width: 100%;
+  color: $white;
+  border: 1px solid #333;
+  padding: 11px 0;
+  font-size: 17px;
+  outline: none;
+  transition: all 0.3s ease;
+  cursor:pointer;
+
+  &:hover {
+    outline: 0;
+    color: $dark;
+  }
+}
+
+.generate-slide-up {
+  background: linear-gradient(to bottom, $main-color 50%, $white 50%);
+  background-size: 100% 200%;
+  background-position: left top;
+
+  &:hover {
+    background-position: right bottom;
+  }
+}

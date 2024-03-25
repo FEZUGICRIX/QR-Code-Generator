@@ -1,0 +1,260 @@
+@import "./base/reset.scss";
+@import "./base/fonts.scss";
+@import "./globals/variables";
+@import "./globals/mixins.scss";
+@import "./templates/download_btn.scss";
+@import "./templates/extension_btn.scss";
+@import "./templates/generate_btn.scss";
+@import "./vendors/shoelace.scss";
+
+body {
+  background: $bg-color;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 30px 15px;
+  padding: 20px 20px 21px;
+  height: 100%;
+}
+
+.note {
+  background: $bg-note;
+  border-radius: $small-border-radius;
+  padding: 10px;
+}
+
+.qr {
+  display: flex;
+  flex-direction: column;
+  border-radius: $big-border-radius;
+  background: $white;
+  width: 740px;
+
+  &__types {
+    display: flex;
+    justify-content: space-between;
+
+    .type {
+      @include button(8px 5px, 19px, 0.3px solid, $white, $dark);
+
+      &:hover {
+        box-shadow: 0 0.55em 0.5em -0.4em $main-color;
+        transform: translateY(-0.25em);
+      }
+    }
+    
+    .type-active {
+      @include button(8px 5px, 19px, 0.3px solid);
+      box-shadow: 0 0.55em 0.5em -0.4em $main-color;
+      transform: translateY(-0.25em);
+    }
+  }
+
+  &__sizes {
+    margin-top: 15px;
+    @include select();
+  }
+
+  #remember {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  #qr__data-input {
+    margin-top: 8px;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 25%
+    }
+
+    .data-input {
+      @include input();
+    }
+
+    .form {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    #url {
+      &__input-column {
+        flex-grow: 2;
+      }
+
+      &__generate-column {
+        flex-grow: 1;
+      }
+    }
+
+    #crypto {
+      &__coin {
+        @include select();
+      }
+    }
+
+    #event {}
+
+    #wifi {
+      &__encryption {
+        @include select();
+      }
+    }
+
+    #location, #whatsapp{
+      .column {
+        width: 33%;
+      }
+    }
+  }
+
+  #file-name {
+    @include input();
+    margin-top: 10px;
+  }
+
+  .setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+
+    &__colors {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      min-height: 200px;
+
+      .setting__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    &__extension {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 200px;
+    }
+  }
+
+  button {  
+    transition: 0.25s;
+    cursor: pointer;
+  }
+
+  #embedded {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0 10px 0;
+
+    #data {
+      font-weight: 500;
+      font-size: 19px;
+      word-wrap: break-word;
+    }
+
+    .embedded {
+      color: rgb(102, 101, 101);
+      font-weight: 400;
+    }
+  }
+
+  @media (max-width: $medium-screen) {
+    .qr__types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      grid-auto-rows: minmax(10px, auto);
+    }
+    
+    .qr__sizes {
+      margin-top: 20px;
+    }
+
+    #qr__data-input {
+      .column {
+        width: 100%;
+      }
+  
+      .form {
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+  
+      #event {
+        input[type="date"] {
+          width: 100%;
+        }
+      }
+  
+      #location, #whatsapp{
+        .column {
+          width: 100%;
+        }
+      }
+  
+    }
+  }
+
+  @media (max-width: $small-screen) {
+    .qr {
+      &__types {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      &__sizes {
+        margin-top: 30px;
+      }
+    }
+  
+    .setting {
+      margin-top: 30px;
+      flex-direction: column;
+      gap: 10px;
+  
+      &__colors {
+        order: 2;
+        flex-direction: row;
+        min-height: auto;
+        width: 100%;
+      }
+  
+      #qrcode {
+        order: 1;
+      }
+  
+      &__extension {
+        order: 3;
+        flex-direction: row;
+        min-height: auto;
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: $extra-small-screen) {
+    .container {
+      margin: 30px 5px;
+      padding: 20px 10px 21px;
+      height: 100%;
+    }
+  }
+}

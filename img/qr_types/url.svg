@@ -1,3 +1,12 @@
-<?xml version="1.0" ?>
-<svg width="30px" height="20px" viewBox="0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<style type="text/css">.st0{fill:#6040EC;}.st1{fill:#0BDC49;}</style><g><g><path class="st1" d="M377.1,351.2h-51.5c-6.6,0-12-5.4-12-12s5.4-12,12-12h51.5c17.9,0,34.6-6.9,47.2-19.5s19.5-29.4,19.5-47.2    c0-36.8-30-66.8-66.8-66.8h-82.9c-17.9,0-34.6,6.9-47.2,19.5s-19.5,29.4-19.5,47.2c0,6.6-5.4,12-12,12s-12-5.4-12-12    c0-24.3,9.4-47.1,26.6-64.2s39.9-26.6,64.2-26.6h82.9c50.1,0,90.8,40.7,90.8,90.8c0,24.3-9.4,47.1-26.6,64.2    S401.3,351.2,377.1,351.2z"/></g><g><path class="st0" d="M213.6,351.2h-82.9c-50.1,0-90.8-40.7-90.8-90.8c0-24.3,9.4-47.1,26.6-64.2s39.9-26.6,64.2-26.6h51.5    c6.6,0,12,5.4,12,12s-5.4,12-12,12h-51.5c-17.9,0-34.6,6.9-47.2,19.5s-19.5,29.4-19.5,47.2c0,36.8,30,66.8,66.8,66.8h82.9    c17.9,0,34.6-6.9,47.2-19.5s19.5-29.4,19.5-47.2c0-6.6,5.4-12,12-12s12,5.4,12,12c0,24.3-9.4,47.1-26.6,64.2    S237.8,351.2,213.6,351.2z"/></g></g></svg>
+<svg fill="#000000" width="16px" height="16px" viewBox="0 0 24 24" id="unlink-alt-3" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line" stroke="#000000">
+    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+    <g id="SVGRepo_iconCarrier">
+    <rect id="secondary" x="1.29" y="8.21" width="21.92" height="7.07" rx="3.54" transform="translate(-4.72 12.1) rotate(-45)" style="fill: #2ca9bc; stroke-width: 2;"/>
+    <path id="primary" d="M3,7A4,4,0,0,1,7,3" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"/>
+    <path id="primary-2" data-name="primary" d="M17,21a4,4,0,0,0,4-4" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"/>
+    <path id="primary-3" data-name="primary" d="M6,8,8,6m8,12,2-2m-7-3,2-2" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"/>
+    <path id="primary-4" data-name="primary" d="M12.5,16.5l-3,3a3.54,3.54,0,0,1-5,0h0a3.54,3.54,0,0,1,0-5l3-3" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"/>
+    <path id="primary-5" data-name="primary" d="M12,7l3-3a3.54,3.54,0,0,1,5,0h0a3.54,3.54,0,0,1,0,5l-3,3" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"/>
+    </g>
+</svg>

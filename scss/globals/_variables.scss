@@ -1,12 +1,16 @@
+// Define background color variables
 $bg-color: #251E28;
 $white: #fff;
-$dark: #0f0f0f;
-$main-color: #803BB6;
-$bg-note: #efe2f5;
+$dark: #0f0f0f; // Dark color for text or elements
+$main-color: #803BB6; // Main color used for elements
+$bg-note: #efe2f5; // Background color for notes
+
+// Define border radius variables
 $big-border-radius: 20px;
 $medium-border-radius: 10px;
 $small-border-radius: 5px;
-// for breakpoints
+
+// Define breakpoints for responsive design
 $medium-screen: 730px;
 $small-screen: 585px;
 $extra-small-screen: 450px;

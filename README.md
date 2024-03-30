@@ -18,7 +18,7 @@ This project is a simple QR code generator built using HTML, SCSS, and JavaScrip
 ***
 
 ## Screenshot 
-![Screenshot](img/screenshot.PNG)
+![Screenshot](img/screenshot.png)
 
 ***
 

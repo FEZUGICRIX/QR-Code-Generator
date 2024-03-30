@@ -17,6 +17,7 @@ $background: $main-color, $color: $white) {
   border-radius: $small-border-radius;
   border: 1px solid;
   outline: none;
+  width: 100%;
 }
 
 @mixin select() {
@@ -25,4 +26,5 @@ $background: $main-color, $color: $white) {
   border: 1px solid;
   border-radius: $small-border-radius;
   outline: none;
+  width: 100%;
 }

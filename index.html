@@ -35,61 +35,91 @@
                         <img src="./img/qr_types/whatsapp.svg" alt="whatsapp">
                         Whatsapp
                     </button>
-                </div>
-                
-                <select class="qr__sizes">
-                    <option value="100x100" class="size">100x100</option>
-                    <option value="200x200" class="size">200x200</option>
-                    <option value="300x300" class="size">300x300</option>
-                    <option value="400x400" class="size">400x400</option>
-                </select>
-                
-                <div id="remember" class="note">
-                    After updating the data, be sure to click the "GENERATE" button
+                    <button class="type scanner" data-type="scanner">
+                        <img src="./img/qr_types/scanner.svg" alt="scanner">
+                        scanner
+                    </button>
                 </div>
 
-                <!-- The data is inserted via javascript -->
-                <div id="qr__data-input"></div>
+                <!-- Section for QR code scanner content -->
+                <div class="qr__scanner-content">
+                    <div class="note">
+                        Upload a PNG, GIF, or JP(E)G under 1 MB for QR scanning
+                    </div>
 
-                <div class="qr__settings setting">
-                    <div class="setting__colors">
-                        <div class="setting__row">
-                            <span>Color:</span>
-                            <sl-color-picker format="hex" id="color" value="#000000" label="Select a color"></sl-color-picker>
+                    <!-- Form for uploading and reading QR codes -->
+                    <form enctype="multipart/form-data" id="qrForm">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+                        <label class="drop-container" id="dropcontainer">
+                            <span class="drop-title">Drop files here</span>
+                            or
+                            <label for="fileInput" class="custom-file-label">Choose a file...</label>
+                            <input type="file" name="file" id="fileInput" class="hidden-input" accept=".png, .gif, .jpeg, .jpg">
+                        </label>
+
+                        <!-- The data of the scanned qr code -->
+                        <div id="received-data"></div>
+
+                        <input id="read" type="submit" value="Read QR code" />
+                    </form>
+                </div>
+
+                 <!-- Section for QR code generator content -->
+                <div class="qr__generator-content">
+                    <select class="qr__sizes">
+                        <option value="100x100" class="size">100x100</option>
+                        <option value="200x200" class="size">200x200</option>
+                        <option value="300x300" class="size">300x300</option>
+                        <option value="400x400" class="size">400x400</option>
+                    </select>
+                    
+                    <div id="remember" class="note">
+                        After updating the data, be sure to click the "GENERATE" button
+                    </div>
+
+                    <!-- The data is inserted via javascript -->
+                    <div id="qr__data-input"></div>
+
+                    <div class="qr__settings setting">
+                        <div class="setting__colors">
+                            <div class="setting__row">
+                                <span>Color:</span>
+                                <sl-color-picker format="hex" id="color" value="#000000" label="Select a color"></sl-color-picker>
+                            </div>
+                            <div class="setting__row">
+                                    <span>Background:</span>
+                                <sl-color-picker format="hex" id="bg-color" value="#ffffff" label="Select a color"></sl-color-picker>
+                            </div>
                         </div>
-                        <div class="setting__row">
-                            <span>Background:</span>
-                            <sl-color-picker format="hex" id="bg-color" value="#ffffff" label="Select a color"></sl-color-picker>
+                        
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?data=example&size=200x200&margin=10" id="qrcode" alt="qrcode">
+                        
+                        <div class="setting__extension">
+                            <button class="extension extension-active format" data-extension="png">PNG</button>
+                            <button class="extension format" data-extension="svg">SVG</button>
+                            <button class="extension format" data-extension="jpg">JPG</button>
                         </div>
+                    </div>
+
+                    <input type="text" id="file-name" placeholder="File name (optional)">
+
+                    <div id="embedded" class="note">
+                        <div class="embedded">Embedded data:</div>
+                        <div id="data">example</div>
                     </div>
                     
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?data=example&size=200x200&margin=10" id="qrcode" alt="qrcode">
-                    
-                    <div class="setting__extension">
-                        <button class="extension extension-active format" data-extension="png">PNG</button>
-                        <button class="extension format" data-extension="svg">SVG</button>
-                        <button class="extension format" data-extension="jpg">JPG</button>
-                    </div>
+                    <!-- Download button for downloading QR code -->
+                    <button id="download" class="button nav-link">
+                        <div class="bottom"></div>
+                        <div class="top">
+                            <div class="label">Download</div>
+                            <div class="button-border button-border-left"></div>
+                            <div class="button-border button-border-top"></div>
+                            <div class="button-border button-border-right"></div>
+                            <div class="button-border button-border-bottom"></div>
+                        </div>
+                    </button>
                 </div>
-
-                <input type="text" id="file-name" placeholder="File name (optional)">
-
-                <div id="embedded" class="note">
-                    <div class="embedded">Embedded data:</div>
-                    <div id="data">example</div>
-                </div>
-                
-                <!-- download button -->
-                <button id="download" class="button nav-link">
-                    <div class="bottom"></div>
-                    <div class="top">
-                        <div class="label">Download</div>
-                        <div class="button-border button-border-left"></div>
-                        <div class="button-border button-border-top"></div>
-                        <div class="button-border button-border-right"></div>
-                        <div class="button-border button-border-bottom"></div>
-                    </div>
-                </button>
             </main>
         </div>
         

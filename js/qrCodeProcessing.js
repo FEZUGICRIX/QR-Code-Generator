@@ -23,13 +23,9 @@ const fetchData = async (color, bgColor) => {
         &format=${parameters.extensionType}
     `.replace(/\s+/g, '');
 
-    const responseData = `
+    const response = await fetch(`
         ${url}?data=${qrData === '' ? 'example' : qrData}
         ${urlQRCodeStyle}
-    `.trim();
-
-    const response = await fetch(`
-        ${responseData}
     `);
 
     qrCodeImage.src = response.url;

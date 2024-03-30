@@ -8,8 +8,9 @@
 @import "./vendors/shoelace.scss";
 
 body {
-  background: $bg-color;
   font-family: "Montserrat", sans-serif;
+  background: $bg-color;
+  color: $dark;
 }
 
 .wrapper {
@@ -22,13 +23,13 @@ body {
 .container {
   margin: 30px 15px;
   padding: 20px 20px 21px;
-  height: 100%;
 }
 
 .note {
   background: $bg-note;
   border-radius: $small-border-radius;
   padding: 10px;
+  font-weight: 500;
 }
 
 .qr {
@@ -36,13 +37,17 @@ body {
   flex-direction: column;
   border-radius: $big-border-radius;
   background: $white;
-  width: 740px;
+  width: 800px;
 
   &__types {
     display: flex;
     justify-content: space-between;
 
     .type {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
       @include button(8px 5px, 19px, 0.3px solid, $white, $dark);
 
       &:hover {
@@ -55,6 +60,11 @@ body {
       @include button(8px 5px, 19px, 0.3px solid);
       box-shadow: 0 0.55em 0.5em -0.4em $main-color;
       transform: translateY(-0.25em);
+    }
+
+    .scanner {
+      background: #041a57;
+      color: $white;
     }
   }
 
@@ -106,8 +116,6 @@ body {
         @include select();
       }
     }
-
-    #event {}
 
     #wifi {
       &__encryption {
@@ -169,7 +177,7 @@ body {
     #data {
       font-weight: 500;
       font-size: 19px;
-      word-wrap: break-word;
+      word-break: break-all;
     }
 
     .embedded {
@@ -178,40 +186,137 @@ body {
     }
   }
 
+  &__scanner-content {
+    display: none;
+    margin-top: 25px;
+
+    #qrForm {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .note {
+      margin-bottom: 10px;
+      word-break: break-all;
+    }
+
+    .error {
+      color: #e94220;
+    }
+
+    #fileInput {
+      color: $white;
+      padding: 5px;
+      background: $main-color;
+      border-radius: $medium-border-radius;
+      cursor: pointer;
+
+      &::file-selector-button {
+        margin-right: 20px;
+        border: none;
+        background: #ffffff;
+        padding: 10px 20px;
+        border-radius: $medium-border-radius;
+        cursor: pointer;
+      }
+    }
+
+    .custom-file-label {
+      display: none;
+    }
+
+    .drop-container.drag-active {
+      background: #a89d9d;
+      border-color: #111;
+      color: $white;
+    }
+    
+    .drop-container.drag-active .drop-title {
+      color: #ffffff;
+    }
+
+    .drop-container {
+      position: relative;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px dashed #555;
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        background: #f7f4f4;
+        border-color: #111;
+      }
+
+      .drop-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+    
+    #read {
+      @include button(15px 0, 22px, 0.3px solid);
+      display: block;
+      margin: auto;
+      width: 100%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: transparent;
+        border: 1px solid $main-color;
+        color: $dark;
+      }
+    }
+  }
+
   @media (max-width: $medium-screen) {
     .qr__types {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      gap: 7px;
       grid-auto-rows: minmax(10px, auto);
+    }
+
+    .scanner {
+      grid-column: 1 / span 3;
     }
     
     .qr__sizes {
       margin-top: 20px;
     }
 
+    #data {
+      width: 100%;
+    }
+
     #qr__data-input {
       .column {
         width: 100%;
       }
-  
+
       .form {
         flex-wrap: wrap;
         flex-direction: column;
       }
-  
+
       #event {
         input[type="date"] {
           width: 100%;
         }
       }
-  
+
       #location, #whatsapp{
         .column {
           width: 100%;
         }
       }
-  
+
     }
   }
 
@@ -224,6 +329,10 @@ body {
       &__sizes {
         margin-top: 30px;
       }
+    }
+
+    .scanner {
+      grid-column: 1 / span 2;
     }
   
     .setting {
@@ -249,7 +358,22 @@ body {
         width: 100%;
       }
     }
+
+    .hidden-input {
+      display: none; /* Hide the standard file input */
+    }
+
+    .custom-file-label { 
+      display: block;
+      color: $white;
+      padding: 13px 25px;
+      font-size: 20px;
+      background: $main-color;
+      border-radius: $medium-border-radius;
+      cursor: pointer;
+    }
   }
+
   @media (max-width: $extra-small-screen) {
     .container {
       margin: 30px 5px;

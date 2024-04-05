@@ -78,8 +78,8 @@ export const qrCodeHTML = {
                 <div class="column">
                     <label for="wifi__encryption">encryption</label>
                     <select id="wifi__encryption">
-                        <option value="WEP">WEP</option>
                         <option value="WPA">WPA/WPA2</option>
+                        <option value="WEP">WEP</option>
                         <option value="nopass">unencryption</option>
                     </select>
                 </div>
